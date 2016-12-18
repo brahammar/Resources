@@ -76,3 +76,5 @@
         }
     }
 });
+
+// TODO: https://www.promisejs.org/implementing/#constructing
