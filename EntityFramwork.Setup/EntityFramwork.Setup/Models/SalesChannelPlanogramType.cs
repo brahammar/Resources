@@ -6,16 +6,14 @@ namespace EntityFramwork.Setup.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("AccountContract")]
-    public partial class AccountContract
+    [Table("SalesChannelPlanogramType")]
+    public partial class SalesChannelPlanogramType
     {
-        public Guid AccountContractId { get; set; }
+        public Guid SalesChannelPlanogramTypeId { get; set; }
 
-        public Guid? ExternalId { get; set; }
+        public Guid SalesChannelId { get; set; }
 
-        public Guid AccountId { get; set; }
-
-        public Guid ContractId { get; set; }
+        public Guid PlanogramTypeId { get; set; }
 
         public DateTime UppDat { get; set; }
 
@@ -24,8 +22,8 @@ namespace EntityFramwork.Setup.Models
         [StringLength(50)]
         public string UpdatedBy { get; set; }
 
-        public virtual Account Account { get; set; }
+        public virtual PlanogramType PlanogramType { get; set; }
 
-        public virtual Contract Contract { get; set; }
+        public virtual SalesChannel SalesChannel { get; set; }
     }
 }

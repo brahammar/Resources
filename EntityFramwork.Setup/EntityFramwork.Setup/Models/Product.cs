@@ -6,23 +6,22 @@ namespace EntityFramwork.Setup.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PlanogramType")]
-    public partial class PlanogramType
+    [Table("Product")]
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PlanogramType()
+        public Product()
         {
-            Planograms = new HashSet<Planogram>();
-            SalesChannelPlanogramTypes = new HashSet<SalesChannelPlanogramType>();
+            PlanogramItems = new HashSet<PlanogramItem>();
         }
 
-        public Guid PlanogramTypeId { get; set; }
+        public Guid ProductId { get; set; }
+
+        public Guid AssortmentId { get; set; }
 
         [Required]
         [StringLength(256)]
         public string Name { get; set; }
-
-        public bool IsPlanogram { get; set; }
 
         public DateTime UppDat { get; set; }
 
@@ -31,12 +30,9 @@ namespace EntityFramwork.Setup.Models
         [StringLength(50)]
         public string UpdatedBy { get; set; }
 
-        public Guid? ExternalId { get; set; }
+        public virtual Assortment Assortment { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Planogram> Planograms { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SalesChannelPlanogramType> SalesChannelPlanogramTypes { get; set; }
+        public virtual ICollection<PlanogramItem> PlanogramItems { get; set; }
     }
 }

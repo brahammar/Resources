@@ -6,16 +6,16 @@ namespace EntityFramwork.Setup.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("AccountBusinessUnitPartnerProgram")]
-    public partial class AccountBusinessUnitPartnerProgram
+    [Table("BrandPartnerProgram")]
+    public partial class BrandPartnerProgram
     {
-        public Guid AccountBusinessUnitPartnerProgramId { get; set; }
+        public Guid BrandPartnerProgramId { get; set; }
 
         public Guid? ExternalId { get; set; }
 
-        public Guid AccountId { get; set; }
+        public Guid BrandId { get; set; }
 
-        public Guid BusinessUnitPartnerProgramId { get; set; }
+        public Guid PartnerProgramId { get; set; }
 
         public DateTime UppDat { get; set; }
 
@@ -24,8 +24,8 @@ namespace EntityFramwork.Setup.Models
         [StringLength(50)]
         public string UpdatedBy { get; set; }
 
-        public virtual Account Account { get; set; }
+        public virtual Brand Brand { get; set; }
 
-        public virtual BusinessUnitPartnerProgram BusinessUnitPartnerProgram { get; set; }
+        public virtual PartnerProgram PartnerProgram { get; set; }
     }
 }

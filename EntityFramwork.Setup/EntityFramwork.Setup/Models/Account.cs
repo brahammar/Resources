@@ -19,7 +19,10 @@ namespace EntityFramwork.Setup.Models
             AccountPlanogramConfigurations = new HashSet<AccountPlanogramConfiguration>();
             AccountSalesChannels = new HashSet<AccountSalesChannel>();
             AccountTrainings = new HashSet<AccountTraining>();
+            AssortmentBrandAccounts = new HashSet<AssortmentBrandAccount>();
+            BusinessUnitAccounts = new HashSet<BusinessUnitAccount>();
             Inspections = new HashSet<Inspection>();
+            APPR_Review = new HashSet<APPR_Review>();
         }
 
         public Guid AccountId { get; set; }
@@ -135,6 +138,8 @@ namespace EntityFramwork.Setup.Models
 
         public bool CanDownloadAssets { get; set; }
 
+        public virtual Country Country { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AccountAddress> AccountAddresses { get; set; }
 
@@ -157,6 +162,15 @@ namespace EntityFramwork.Setup.Models
         public virtual ICollection<AccountTraining> AccountTrainings { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<AssortmentBrandAccount> AssortmentBrandAccounts { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BusinessUnitAccount> BusinessUnitAccounts { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Inspection> Inspections { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<APPR_Review> APPR_Review { get; set; }
     }
 }

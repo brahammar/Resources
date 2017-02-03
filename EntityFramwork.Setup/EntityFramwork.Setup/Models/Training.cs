@@ -6,23 +6,28 @@ namespace EntityFramwork.Setup.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("PlanogramType")]
-    public partial class PlanogramType
+    [Table("Training")]
+    public partial class Training
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PlanogramType()
+        public Training()
         {
-            Planograms = new HashSet<Planogram>();
-            SalesChannelPlanogramTypes = new HashSet<SalesChannelPlanogramType>();
+            AccountTrainings = new HashSet<AccountTraining>();
         }
 
-        public Guid PlanogramTypeId { get; set; }
+        public Guid TrainingId { get; set; }
+
+        public Guid? ExternalId { get; set; }
 
         [Required]
         [StringLength(256)]
         public string Name { get; set; }
 
-        public bool IsPlanogram { get; set; }
+        [Required]
+        [StringLength(1024)]
+        public string Description { get; set; }
+
+        public Guid? PartnerProgramId { get; set; }
 
         public DateTime UppDat { get; set; }
 
@@ -31,12 +36,9 @@ namespace EntityFramwork.Setup.Models
         [StringLength(50)]
         public string UpdatedBy { get; set; }
 
-        public Guid? ExternalId { get; set; }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Planogram> Planograms { get; set; }
+        public virtual ICollection<AccountTraining> AccountTrainings { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SalesChannelPlanogramType> SalesChannelPlanogramTypes { get; set; }
+        public virtual PartnerProgram PartnerProgram { get; set; }
     }
 }

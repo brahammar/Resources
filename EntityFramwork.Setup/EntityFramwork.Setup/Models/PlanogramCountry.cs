@@ -15,6 +15,8 @@ namespace EntityFramwork.Setup.Models
 
         public Guid CountryId { get; set; }
 
+        public virtual Country Country { get; set; }
+
         public virtual Planogram Planogram { get; set; }
     }
 }

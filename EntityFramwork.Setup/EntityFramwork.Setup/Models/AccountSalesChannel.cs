@@ -25,5 +25,7 @@ namespace EntityFramwork.Setup.Models
         public string UpdatedBy { get; set; }
 
         public virtual Account Account { get; set; }
+
+        public virtual SalesChannel SalesChannel { get; set; }
     }
 }
