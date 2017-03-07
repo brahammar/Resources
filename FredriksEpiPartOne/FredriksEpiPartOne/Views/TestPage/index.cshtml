@@ -1,0 +1,23 @@
+﻿@model FredriksEpiPartOne.Models.Pages.TestPage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Test</title>
+</head>
+<body>
+<h1>
+    http://world.episerver.com/documentation/Items/Developers-Guide/Episerver-CMS/9/Content/Properties/Property-types/built-in-property-types/
+</h1>
+<div>
+    @Html.PropertyFor(x => x.MainBody)
+    @Html.PropertyFor(x=> x.Header)
+</div>
+</body>
+</html>
